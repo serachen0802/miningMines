@@ -83,17 +83,17 @@ foreach($arr as $value) {
 }
 
 
-foreach($arr as $value) {
-    // $x = 0 ;
-    $y=0;
-    foreach ($value as $val) {
-        // $y = 0;
-        echo "<button id='".($x*10+$y)."' value=".$val." style='background-color:#FFFFFF'>$val</button>";
-        $y++;
-    }
-    echo "<br>";
-    $x++;
-}
+// foreach($arr as $value) {
+//     // $x = 0 ;
+//     $y=0;
+//     foreach ($value as $val) {
+//         // $y = 0;
+//         echo "<button id='".($x*10+$y)."' value=".$val." style='background-color:#FFFFFF'>$val</button>";
+//         $y++;
+//     }
+//     echo "<br>";
+//     $x++;
+// }
 
  ?>
 
@@ -133,56 +133,115 @@ foreach($arr as $value) {
         });
         function run($x){
             if($x%10 == 0){
-                            var $z2 = $x-10;//上
-                            var $z1 = $x+10;//下
-                            var $z3 = $x+1;//右
-                            var $z5 = $x-9;//右上
-                            var $z4 = $x+11;//右下
-                            openb($z1);
-                            openb($z2);
-                            openb($z3);
-                            openb($z4);
-                            openb($z5);
+                var $z1 = $x+10;//下
+                var $z2 = $x-10;//上
+                var $z3 = $x+1;//右
+                var $z4 = $x+11;//右下
+                var $z5 = $x-9;//右上
+                openb($z1);
+                openb($z2);
+                openb($z3);
+                openb($z4);
+                openb($z5);
+                    // if($("#"+$z1).val()=="0"){
+                    //     run($z1);
+                    // }
+                    // if($("#"+$z2).val()=="0"){
+                    //     run($z2);
+                    // }
+                    // if($("#"+$z3).val()=="0"){
+                    //     run($z3);
+                    // }
+                    // if($("#"+$z4).val()=="0"){
+                    //     run($z4);
+                    // }
+                    // if($("#"+$z5).val()=="0"){
+                    //     run($z5);
+                    // }
 
-                        }else if($x%10 == 9){
-                            var $z1 = $x+10;//下
-                            var $z2 = $x-10;//上
-                            var $z3 = $x-1;//左
-                            var $z5 = $x+9;//左下
-                            var $z7 = $x-11;//左上
-                            openb($z1);
-                            openb($z2);
-                            openb($z3);
-                            openb($z5);
-                            openb($z7);
-                        }else{
-                            var $z1 = $x+10;
-                            var $z2 = $x-10;
-                            var $z3 = $x-1;
-                            var $z4 = $x+1;
-                            var $z5 = $x-9;
-                            var $z6 = $x+9;
-                            var $z7 = $x-11;
-                            var $z8 = $x+11;
-                            openb($z1);
-                            openb($z2);
-                            openb($z3);
-                            openb($z4);
-                            openb($z5);
-                            openb($z6);
-                            openb($z7);
-                            openb($z8);
-                        }
+            }else if($x%10 == 9){
+                var $z1 = $x+10;//下
+                var $z2 = $x-10;//上
+                var $z3 = $x-1;//左
+                var $z5 = $x+9;//左下
+                var $z7 = $x-11;//左上
+                openb($z1);
+                openb($z2);
+                openb($z3);
+                openb($z5);
+                openb($z7);
+                    // if($("#"+$z1).val()=="0"){
+                    //     run($z1);
+                    // }
+                    // if($("#"+$z2).val()=="0"){
+                    //     run($z2);
+                    // }
+                    // if($("#"+$z3).val()=="0"){
+                    //     run($z3);
+                    // }
+                    // if($("#"+$z5).val()=="0"){
+                    //     run($z5);
+                    // }
+                    // if($("#"+$z7).val()=="0"){
+                    //     run($z7);
+                    // }
+
+            } else {
+                var $z1 = $x+10;
+                var $z2 = $x-10;
+                var $z3 = $x-1;
+                var $z4 = $x+1;
+                var $z5 = $x-9;
+                var $z6 = $x+9;
+                var $z7 = $x-11;
+                var $z8 = $x+11;
+                openb($z1);
+                openb($z2);
+                openb($z3);
+                openb($z4);
+                openb($z5);
+                openb($z6);
+                openb($z7);
+                openb($z8);
+                // if($("#"+$z1).val()=="0"){
+                //     run($z1);
+                // }
+                // if($("#"+$z2).val()=="0"){
+                //     run($z2);
+                // }
+                // if($("#"+$z3).val()=="0"){
+                //     run($z3);
+                // }
+                // if($("#"+$z4).val()=="0"){
+                //     run($z4);
+                // }
+                // if($("#"+$z5).val()=="0"){
+                //     run($z5);
+                // }
+                // if($("#"+$z6).val()=="0"){
+                //     run($z6);
+                // }
+                // if($("#"+$z7).val()=="0"){
+                //     run($z7);
+                // }
+                // if($("#"+$z8).val()=="0"){
+                //     run($z8);
+                // }
+            }
         }
 
-        function openb($z){
+        function openb($z) {
             // alert("#"+$z);
             // alert($("#"+$z).val);
             $("#"+$z).text($("#"+$z).val());
             $("#"+$z).css("background-color","#FFFFFF");
+            // if($("#"+$z).val()== "0"){
+            //     run($z);
+            // }
             // if($("#"+$z).val()=="0"&&$("#"+$z).attr("")){
                 // alert($("#"+$z).attr(''));
-                // $i = Number($("#"+$z).id());
+
+                // alert($("#"+$z).id(Number($("#"+$z).id())*100));
                 // run($i);
             // }
         }
