@@ -82,6 +82,7 @@ foreach($arr as $value) {
     $x++;
 }
 
+
 foreach($arr as $value) {
     // $x = 0 ;
     $y=0;
@@ -95,6 +96,8 @@ foreach($arr as $value) {
 }
 
  ?>
+
+<input type="text" id="showMax" value="<?php echo $maxBomb;?>"/>
 </body>
 <script>
 
@@ -108,7 +111,8 @@ foreach($arr as $value) {
                 $(this).text($(this).val());
                 $(this).css("background-color","#FFFFFF");
                     if ($(this).val() == "M") {
-                        alert("bomb!");
+                        alert("你炸掉了! 哈哈哈哈哈哈哈哈 ^^");
+                        location.href='https://lab-sera-chen.c9users.io/miningMines/';
                     }
                     if ($(this).val() == "0") {
                         // int $zero = $(this).attr('id');
@@ -119,12 +123,9 @@ foreach($arr as $value) {
                     }
                 }
             if(event.button == 2){
-                if($(this).val() != "M") {
-                    alert("false");
-                } else {
                     $(this).text("!");
                     $(this).css("background-color","#FF0000");
-                }
+                    $("#showMax").val(Number($("#showMax").val())-1);
             }
             // if(event.button == 1){
             //     $(this).css("background-color","#FFFF1C");
@@ -179,8 +180,8 @@ foreach($arr as $value) {
             // alert($("#"+$z).val);
             $("#"+$z).text($("#"+$z).val());
             $("#"+$z).css("background-color","#FFFFFF");
-            // if($("#"+$z).val()=="0"&&$("#"+$z).attr("background-color")){
-                alert($("#"+$z).attr("background-color"));
+            // if($("#"+$z).val()=="0"&&$("#"+$z).attr("")){
+                // alert($("#"+$z).attr(''));
                 // $i = Number($("#"+$z).id());
                 // run($i);
             // }
