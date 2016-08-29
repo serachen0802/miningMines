@@ -14,7 +14,7 @@
 	}
 </style>
 <body >
-    <?php
+<?php
 header("Content-Type:text/html; charset=utf-8");
 $maxBomb = 20;
 $length = 10;
@@ -75,7 +75,19 @@ foreach($arr as $value) {
     $y=0;
     foreach ($value as $val) {
         // $y = 0;
-        echo "<button id='".$x.$y."' value=".$val.">-</button>";
+        echo "<button id='".($x*10+$y)."' value=".$val.">-</button>";
+        $y++;
+    }
+    echo "<br>";
+    $x++;
+}
+
+foreach($arr as $value) {
+    // $x = 0 ;
+    $y=0;
+    foreach ($value as $val) {
+        // $y = 0;
+        echo "<button id='".($x*10+$y)."' value=".$val." style='background-color:#FFFFFF'>$val</button>";
         $y++;
     }
     echo "<br>";
@@ -98,6 +110,13 @@ foreach($arr as $value) {
                     if ($(this).val() == "M") {
                         alert("bomb!");
                     }
+                    if ($(this).val() == "0") {
+                        // int $zero = $(this).attr('id');
+                        var $x = Number($(this).attr('id'));
+                        run($x);
+
+
+                    }
                 }
             if(event.button == 2){
                 if($(this).val() != "M") {
@@ -111,6 +130,61 @@ foreach($arr as $value) {
             //     $(this).css("background-color","#FFFF1C");
             // }
         });
+        function run($x){
+            if($x%10 == 0){
+                            var $z2 = $x-10;//上
+                            var $z1 = $x+10;//下
+                            var $z3 = $x+1;//右
+                            var $z5 = $x-9;//右上
+                            var $z4 = $x+11;//右下
+                            openb($z1);
+                            openb($z2);
+                            openb($z3);
+                            openb($z4);
+                            openb($z5);
+
+                        }else if($x%10 == 9){
+                            var $z1 = $x+10;//下
+                            var $z2 = $x-10;//上
+                            var $z3 = $x-1;//左
+                            var $z5 = $x+9;//左下
+                            var $z7 = $x-11;//左上
+                            openb($z1);
+                            openb($z2);
+                            openb($z3);
+                            openb($z5);
+                            openb($z7);
+                        }else{
+                            var $z1 = $x+10;
+                            var $z2 = $x-10;
+                            var $z3 = $x-1;
+                            var $z4 = $x+1;
+                            var $z5 = $x-9;
+                            var $z6 = $x+9;
+                            var $z7 = $x-11;
+                            var $z8 = $x+11;
+                            openb($z1);
+                            openb($z2);
+                            openb($z3);
+                            openb($z4);
+                            openb($z5);
+                            openb($z6);
+                            openb($z7);
+                            openb($z8);
+                        }
+        }
+
+        function openb($z){
+            // alert("#"+$z);
+            // alert($("#"+$z).val);
+            $("#"+$z).text($("#"+$z).val());
+            $("#"+$z).css("background-color","#FFFFFF");
+            // if($("#"+$z).val()=="0"&&$("#"+$z).attr("background-color")){
+                alert($("#"+$z).attr("background-color"));
+                // $i = Number($("#"+$z).id());
+                // run($i);
+            // }
+        }
     });
 </script>
 </html>
